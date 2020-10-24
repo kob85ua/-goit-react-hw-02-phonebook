@@ -4,14 +4,19 @@ import { v4 as uuidv4 } from "uuid";
 import ContactList from "./components/ContactList";
 import InputBlock from "./components/InputBlock";
 import SearchForm from "./components/SearchForm";
-import {AppWrapper} from "./components/Styles"
+import { AppWrapper } from "./components/Styles";
 class App extends Component {
   static defaultProps = {};
 
   static propTypes = {};
 
   state = {
-    contacts: [],
+    contacts: [
+      {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+      {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+      {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+      {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+    ],
     filter: "",
   };
 
@@ -32,8 +37,9 @@ class App extends Component {
     const existContact = this.state.contacts.find(
       ({ name }) => name === contactName
     );
-    if (contactName==="" || contactNumber==="") {alert(`Fill in all fields`)}
-    else if (existContact !== undefined) {
+    if (contactName === "" || contactNumber === "") {
+      alert(`Fill in all fields`);
+    } else if (existContact !== undefined) {
       alert(`${existContact.name} is already in contacts`);
     } else {
       const contact = {

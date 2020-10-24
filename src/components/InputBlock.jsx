@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
-import {InputBlockWrapper, Label, Input, Button} from "./Styles"
+import PropTypes from "prop-types";
+import { InputBlockWrapper, Label, Input, Button } from "./Styles";
 class InputBlock extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -26,10 +26,9 @@ class InputBlock extends Component {
       <div>
         <InputBlockWrapper onSubmit={this.handleSubmit}>
           <Label>
-             <span>Name</span>
+            <span>Name</span>
             <Input
               type="text"
-              
               name="name"
               value={name}
               onChange={this.handleChange}
@@ -39,7 +38,6 @@ class InputBlock extends Component {
             <span>Number</span>
             <Input
               type="tel"
-              
               name="number"
               value={number}
               onChange={this.handleChange}

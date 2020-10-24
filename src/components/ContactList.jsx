@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, List, ListItem} from "./Styles"
+import { Button, List, ListItem } from "./Styles";
 const contactList = ({ phoneContacts, onDeleteContact }) => (
   <List>
     {phoneContacts.map((phoneContact) => (
